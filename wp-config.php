@@ -26,7 +26,7 @@ define( 'DB_NAME', getenv('DB_NAME') ?: 'portfolio' );
 define( 'DB_USER', getenv('DB_USER') ?: 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', getenv('DB_PASSWORD') ?: 'root' );
+define( 'DB_PASSWORD', getenv('DB_PASSWORD') ?: 'defaultpassword' );
 
 /** Database hostname */
 define( 'DB_HOST', getenv('DB_HOST') ?: 'localhost' );
