@@ -29,7 +29,7 @@ define( 'DB_USER', getenv('DB_USER') ?: 'root' );
 define( 'DB_PASSWORD', getenv('DB_PASSWORD') ?: 'defaultpassword' );
 
 /** Database hostname */
-define( 'DB_HOST', getenv('DB_HOST') ?: 'localhost' );
+define( 'DB_HOST', getenv('DB_HOST') ?: 'postgresql://admin:7tWMSMaIzyLLzmLAKPXYMowaHJGxeOvX@dpg-d1n8vcfdiees73eudflg-a/portfolio_c8gg' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
