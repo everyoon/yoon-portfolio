@@ -20,10 +20,10 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', getenv('DB_NAME') ?: 'portfolio' );
+define( 'DB_NAME', getenv('DB_NAME') ?: 'portfolio-db' );
 
 /** Database username */
-define( 'DB_USER', getenv('DB_USER') ?: 'root' );
+define( 'DB_USER', getenv('DB_USER') ?: 'admin' );
 
 /** Database password */
 define( 'DB_PASSWORD', getenv('DB_PASSWORD') ?: 'defaultpassword' );
