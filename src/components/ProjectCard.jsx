@@ -40,11 +40,20 @@ const Overlay = styled.div`
 const OverlayTitle = styled.h3`
   margin: 24px;
   color: var(--color-light);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
   @media (max-width: 800px) {
     font-size: 18px;
+  }
+  @media (max-width: 680px) {
+    font-size: 16px;
+  }
+  @media (max-width: 650px) {
+    font-size: 20px;
+  }
+  @media (max-width: 375px) {
+    font-size: 16px;
   }
 `;
 

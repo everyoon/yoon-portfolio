@@ -14,9 +14,11 @@ const Grid = styled.div`
 `;
 
 function ProjectGrid({ projects }) {
+  const sortedProjects = [...projects].sort((a, b) => new Date(b.date) - new Date(a.date));
+
   return (
     <Grid>
-      {projects.map((project) => (
+      {sortedProjects.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
     </Grid>

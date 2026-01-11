@@ -20,7 +20,7 @@ export const projects = [
   },
   {
     id: 'exhibition_poster',
-    title: 'Hi, My Summer',
+    title: '파도가 남기고 간 것은 전시회 포스터',
     category: ['Graphic', 'Poster'],
     date: '2025.06.06',
     thumbnail: '/images/projects/exhibition/thumb.jpg',
@@ -39,7 +39,7 @@ export const projects = [
   {
     id: 'bcc',
     title: '부산문화회관 웹사이트 리디자인',
-    category: ['WEB', 'UX·UI'],
+    category: ['Web', 'UX·UI'],
     date: '2026.01.04',
     thumbnail: '/images/projects/bcc/thumb.jpg',
 
