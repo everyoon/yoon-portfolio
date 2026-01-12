@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Section = styled.section`
   margin-top: 120px;
@@ -79,6 +79,9 @@ const Desc = styled.div`
 `;
 
 const Thumb = styled.img`
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  object-fit: cover;
   width: 100%;
   display: block;
 `;

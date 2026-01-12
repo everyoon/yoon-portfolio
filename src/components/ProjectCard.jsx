@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Card = styled(Link)`
   display: block;
@@ -8,13 +8,15 @@ const Card = styled(Link)`
 `;
 
 const ThumbWrap = styled.div`
+  width: 100%;
+  height: 100%;
   position: relative;
-  background: var(--color-primary);
   overflow: hidden;
 `;
 
 const Thumb = styled.img`
-  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
   display: block;
   transition: transform 0.4s ease, filter 0.4s ease;
   ${Card}:hover & {
