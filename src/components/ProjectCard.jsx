@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Card = styled(Link)`
   display: block;
@@ -35,6 +35,10 @@ const Overlay = styled.div`
   opacity: 0;
   transition: opacity 0.4s ease;
   ${Card}:hover & {
+    opacity: 1;
+  }
+  @media (max-width: 650px) {
+    background: rgba(0, 0, 0, 0.08);
     opacity: 1;
   }
 `;

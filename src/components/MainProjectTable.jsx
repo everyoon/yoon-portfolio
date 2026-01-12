@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Section = styled.section`
   margin-top: 120px;
@@ -69,12 +69,13 @@ const Category = styled.div`
 const Desc = styled.div`
   line-height: 150%;
   display: -webkit-box;
-  -webkit-line-clamp: 8;
+  -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
   overflow: hidden;
   letter-spacing: -0.05rem;
   @media (max-width: 800px) {
     font-size: 12px;
+    -webkit-line-clamp: 8;
   }
 `;
 

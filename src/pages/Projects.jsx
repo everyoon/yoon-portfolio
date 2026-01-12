@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { projects } from '@/data/projects';
 import ProjectGrid from '@/components/ProjectGrid';
 
@@ -93,19 +94,31 @@ const FilterSticky = styled.div`
 const FilterBar = styled.div`
   display: flex;
   gap: 24px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  @media (min-width: 650px) {
+    gap: 32px;
+    overflow-x: visible;
+    white-space: normal;
+  }
 `;
 
 const FilterButton = styled.button`
   font-size: 16px;
   font-weight: 600;
+  padding-bottom: 6px;
   cursor: pointer;
-
-  color: ${({ $active }) => ($active ? 'var(--color-text)' : 'var(--color-subtext)')};
-
+  color: var(--color-primary);
   text-decoration: ${({ $active }) => ($active ? 'underline' : 'none')};
   text-decoration-thickness: 1.5px;
-  text-underline-offset: 3px;
+  text-underline-offset: 6px;
 
   @media (max-width: 650px) {
     font-size: 14px;
@@ -117,21 +130,46 @@ const GridWrap = styled.section`
 `;
 
 function Projects() {
-  const [activeCategory, setActiveCategory] = useState('ALL');
-  const categories = ['ALL', 'WEB', 'APP', 'UX·UI'];
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeCategory = searchParams.get('category') || 'All';
+  const categories = [
+    { label: 'All', value: 'All' },
+    { label: 'Web', value: 'Web' },
+    { label: 'App', value: 'App' },
+    { label: 'UX·UI', value: 'UX·UI' },
+    { label: 'PDP', value: 'PDP' },
+    { label: 'Promotions', value: 'Promotions' },
+    { label: 'Coding', value: 'Coding' },
+    { label: 'Branding', value: 'Branding' },
+    { label: 'Etc', value: 'Etc' },
+    { label: 'Graphic', value: 'Graphic' },
+  ];
+
+  const sortedCategories = [
+    categories.find((c) => c.value === 'All'),
+    ...categories.filter((c) => c.value !== 'All' && c.value !== 'Etc').sort((a, b) => a.label.localeCompare(b.label)),
+    categories.find((c) => c.value === 'Etc'),
+  ];
 
   const filteredProjects =
-    activeCategory === 'ALL' ? projects : projects.filter((p) => p.category.includes(activeCategory));
+    activeCategory === 'All' ? projects : projects.filter((p) => p.category.includes(activeCategory));
+
+  const handleCategoryClick = (category) => {
+    if (category === 'All') {
+      setSearchParams({});
+    } else {
+      setSearchParams({ category });
+    }
+  };
 
   const topRef = useRef(null);
-
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'auto',
     });
-  }, []);
+  }, [activeCategory]);
 
   return (
     <Page ref={topRef}>
@@ -205,20 +243,13 @@ function Projects() {
       </TitleWrap>
       <FilterSticky>
         <FilterBar>
-          {categories.map((category) => (
+          {sortedCategories.map((cat) => (
             <FilterButton
-              key={category}
-              $active={activeCategory === category}
-              onClick={() => {
-                setActiveCategory(category);
-
-                topRef.current?.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                });
-              }}
+              key={cat.value}
+              $active={activeCategory === cat.value}
+              onClick={() => handleCategoryClick(cat.value)}
             >
-              {category}
+              {cat.label}
             </FilterButton>
           ))}
         </FilterBar>

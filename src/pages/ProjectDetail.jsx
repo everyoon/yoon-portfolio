@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { projects } from '@/data/projects';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { useEffect } from 'react';
 import leftIcon from '@/assets/arrow-left.png';
 
@@ -21,15 +21,18 @@ const Right = styled.aside`
   background: var(--color-light);
   position: sticky;
   top: 54px;
-  border-left: 1px solid var(--color-darker);
-  border-bottom: 1px solid var(--color-darker);
+  align-self: flex-start;
+  padding-bottom: 24px;
   @media (max-width: 1080px) {
     display: none;
   }
 `;
+const Container = styled.div`
+  border-left: 1px solid var(--color-darker);
+`;
 
 const TitleWrap = styled.div`
-  padding: 24px;
+  padding: 24px 24px 32px;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -58,32 +61,17 @@ const TitleInner = styled.div`
   }
 `;
 
-const fadeUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
 const Title = styled.h3`
   font-size: 42px;
   font-weight: 700;
-  opacity: 0;
-  animation: ${fadeUp} 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   @media (max-width: 800px) {
     font-size: 32px;
   }
   @media (max-width: 650px) {
     font-size: 24px;
-    align-self: flex-start;
   }
   @media (max-width: 380px) {
     font-size: 18px;
-    align-self: flex-start;
   }
 `;
 
@@ -114,7 +102,7 @@ const MetaList = styled.ul`
     font-size: 14px;
     line-height: 150%;
     strong {
-      width: 140px;
+      min-width: 140px;
       padding: 8px 12px;
       font-weight: 600;
     }
@@ -136,11 +124,8 @@ const ButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 24px;
-  @media (max-width: 650px) {
-    padding: 24px 12px;
-  }
-
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--color-darker);
   button {
     width: 100%;
     padding: 12px;
@@ -167,11 +152,11 @@ function ProjectDetail() {
   const navigate = useNavigate();
   const project = projects.find((p) => p.id === id);
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-  }, []);
-
   if (!project) return null;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
 
   return (
     <Layout>
@@ -229,41 +214,43 @@ function ProjectDetail() {
         </ImageWrap>
       </Left>
       <Right>
-        <MetaList>
-          <li>
-            <strong>DESC</strong>
-            <p>{project.detail.description}</p>
-          </li>
-          <li>
-            <strong>PROJECT</strong>
-            <p>{project.detail.projects}</p>
-          </li>
-          <li>
-            <strong>PERIOD</strong>
-            <p>{project.detail.period}</p>
-          </li>
-          <li>
-            <strong>CONTRIBUTION</strong>
-            <p>{project.detail.Contribution}</p>
-          </li>
-          <li>
-            <strong>TOOLS</strong>
-            <p>{project.detail.tools.join(', ')}</p>
-          </li>
-        </MetaList>
-        {project.detail.links && (
-          <ButtonGroup>
-            {project.detail.links.site && (
-              <button onClick={() => window.open(project.detail.links.site, '_blank')}>GO SITE</button>
-            )}
-            {project.detail.links.figma && (
-              <button onClick={() => window.open(project.detail.links.figma, '_blank')}>GO FIGMA</button>
-            )}
-            {project.detail.links.prototype && (
-              <button onClick={() => window.open(project.detail.links.prototype, '_blank')}>GO PROTOTYPE</button>
-            )}
-          </ButtonGroup>
-        )}
+        <Container>
+          <MetaList>
+            <li>
+              <strong>DESC</strong>
+              <p>{project.detail.description}</p>
+            </li>
+            <li>
+              <strong>PROJECT</strong>
+              <p>{project.detail.projects}</p>
+            </li>
+            <li>
+              <strong>PERIOD</strong>
+              <p>{project.detail.period}</p>
+            </li>
+            <li>
+              <strong>CONTRIBUTION</strong>
+              <p>{project.detail.Contribution}</p>
+            </li>
+            <li>
+              <strong>TOOLS</strong>
+              <p>{project.detail.tools.join(', ')}</p>
+            </li>
+          </MetaList>
+          {project.detail.links && (
+            <ButtonGroup>
+              {project.detail.links.site && (
+                <button onClick={() => window.open(project.detail.links.site, '_blank')}>GO SITE</button>
+              )}
+              {project.detail.links.figma && (
+                <button onClick={() => window.open(project.detail.links.figma, '_blank')}>GO FIGMA</button>
+              )}
+              {project.detail.links.prototype && (
+                <button onClick={() => window.open(project.detail.links.prototype, '_blank')}>GO PROTOTYPE</button>
+              )}
+            </ButtonGroup>
+          )}
+        </Container>
       </Right>
     </Layout>
   );
