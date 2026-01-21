@@ -1,5 +1,12 @@
-import styled from 'styled-components';
-import ProjectCard from './ProjectCard';
+import styled from "styled-components";
+import ProjectCard from "./ProjectCard";
+
+const parseDotDate = (s) => {
+  // "2025.06.04" -> "2025-06-04"
+  const iso = (s || "").trim().replaceAll(".", "-");
+  const t = Date.parse(iso);
+  return Number.isNaN(t) ? 0 : t;
+};
 
 const Grid = styled.div`
   display: grid;
@@ -14,7 +21,9 @@ const Grid = styled.div`
 `;
 
 function ProjectGrid({ projects }) {
-  const sortedProjects = [...projects].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const sortedProjects = [...projects].sort(
+    (a, b) => parseDotDate(b.date) - parseDotDate(a.date)
+  );
 
   return (
     <Grid>
