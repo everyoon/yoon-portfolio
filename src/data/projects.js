@@ -189,6 +189,7 @@ export const projects = [
         '/images/projects/codec/11.jpg',
         '/images/projects/codec/12.jpg',
         '/images/projects/codec/13.jpg',
+        '/images/projects/codec/14.jpg',
       ],
       links: {
         site: 'https://codec.dothome.co.kr/',
@@ -222,6 +223,7 @@ export const projects = [
         '/images/projects/e-youth/9.jpg',
         '/images/projects/e-youth/10.jpg',
         '/images/projects/e-youth/11.jpg',
+        '/images/projects/e-youth/12.jpg',
       ],
       links: {
         site: 'https://everyoon.github.io/youth-site/',
@@ -255,6 +257,7 @@ export const projects = [
         '/images/projects/bcc/9.jpg',
         '/images/projects/bcc/10.jpg',
         '/images/projects/bcc/11.jpg',
+        '/images/projects/bcc/12.jpg',
       ],
       links: {
         prototype:
@@ -315,6 +318,7 @@ Pomy는 20·30대 사용자가 일상 속 감정을 부담 없이 기록하고 �
         '/images/projects/pomy/13.jpg',
         '/images/projects/pomy/14.jpg',
         '/images/projects/pomy/15.jpg',
+        '/images/projects/pomy/16.jpg',
       ],
       links: {
         prototype:
@@ -374,6 +378,7 @@ Pomy는 20·30대 사용자가 일상 속 감정을 부담 없이 기록하고 �
         '/images/projects/minify/13.jpg',
         '/images/projects/minify/14.jpg',
         '/images/projects/minify/16.jpg',
+        '/images/projects/minify/17.jpg',
       ],
       links: {
         prototype:
@@ -429,6 +434,47 @@ Pomy는 20·30대 사용자가 일상 속 감정을 부담 없이 기록하고 �
         '/images/projects/2025pf/5.jpg',
         '/images/projects/2025pf/6.jpg',
       ],
+    },
+  },
+  {
+    id: 'timo',
+    title: 'Timo - 맞춤 질문으로 만드는 회고 습관',
+    category: ['App', 'UX·UI'],
+    date: '2026.02.27',
+    thumbnail: '/images/projects/timo/thumb.jpg',
+
+    detail: {
+      projects: '팀프로젝트',
+      period: '2026.01.05 – 2026.02.27',
+      Contribution: '50%',
+      tools: ['Figma', 'Jira', 'Notion', 'Slack'],
+      description: `
+Timo는 사용자가 자신만의 속도로 꾸준한 회고 습관을 형성할 수 있도록 돕는 ZTPI 기반 맞춤형 회고 서비스입니다. '무엇을 써야 할지 모르겠다'는 막막함과 기록에 소요되는 시간적 부담이라는 문제에서 출발해 , 사용자의 시간관 성향을 분석하고 그에 최적화된 '하루 한 질문'을 던짐으로써 회고의 진입 장벽을 획기적으로 낮춥니다. AI 답변 분석을 통해 실시간으로 시간관을 재계산하고 캐릭터 기반의 시각적 피드백을 제공하여 , 회고를 단순한 과거 기록이 아닌 성장을 위한 변화의 동력으로 전환하며, 사용자가 건강하고 균형 잡힌 시간관을 찾아가는 지속 가능한 회고 루틴을 형성하도록 지원합니다.
+      `,
+      images: [
+        '/images/projects/timo/1.jpg',
+        '/images/projects/timo/2.jpg',
+        '/images/projects/timo/3.jpg',
+        '/images/projects/timo/4.jpg',
+        '/images/projects/timo/5.jpg',
+        '/images/projects/timo/6.jpg',
+        '/images/projects/timo/7.jpg',
+        '/images/projects/timo/8.jpg',
+        '/images/projects/timo/9.jpg',
+        '/images/projects/timo/10.jpg',
+        '/images/projects/timo/11.jpg',
+        '/images/projects/timo/12.jpg',
+        '/images/projects/timo/13.jpg',
+        '/images/projects/timo/14.jpg',
+        '/images/projects/timo/15.jpg',
+        '/images/projects/timo/16.jpg',
+        '/images/projects/timo/17.jpg',
+        '/images/projects/timo/18.jpg',
+        '/images/projects/timo/19.jpg',
+      ],
+      links: {
+        site: 'https://timo.io.kr/',
+      },
     },
   },
 ];
