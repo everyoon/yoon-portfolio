@@ -134,6 +134,7 @@ function Projects() {
   const activeCategory = searchParams.get('category') || 'All';
   const categories = [
     { label: 'All', value: 'All' },
+    { label: 'AI', value: 'AI' },
     { label: 'Web', value: 'Web' },
     { label: 'App', value: 'App' },
     { label: 'UX·UI', value: 'UX·UI' },

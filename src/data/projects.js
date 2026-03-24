@@ -477,4 +477,30 @@ Timo는 사용자가 자신만의 속도로 꾸준한 회고 습관을 형성할
       },
     },
   },
+  {
+    id: 'jogack',
+    title: 'Jogack - 나만의 사진 조각 만들기',
+    category: ['AI', 'App', 'Coding', 'UX·UI', 'Web'],
+    date: '2026.03.24',
+    thumbnail: '/images/projects/jogack/thumb.jpg',
+
+    detail: {
+      projects: '개인프로젝트',
+      period: '2026.03.22 – 2026.03.24',
+      Contribution: '100%',
+      tools: ['Figma', 'Google AI Studio', 'Claude', 'React', 'Vite', 'Tailwind css'],
+      description: `
+나만의 디지털 다이어리를 완성하는 작은 조각. 직관적인 모양 자르기와 투명 배경 저장을 지원하는 이미지 크롭 웹 앱 '조각(JOGAK)'입니다. 직접 설계한 UI/UX 기획과 디자인을 바탕으로, Claude 및 Google AI Studio를 활용한 바이브 코딩을 통해 완성도를 높인 프로젝트입니다. AI와의 협업으로 복잡한 로직 구현과 오류 리팩토링을 신속하게 처리하여, 우표·별 등 감성적인 모양의 투명 PNG 스티커를 누구나 편리하게 만들 수 있는 최적의 디지털 다이어리 환경을 구현했습니다.
+      `,
+      images: [
+        '/images/projects/jogack/1.jpg',
+        '/images/projects/jogack/2.jpg',
+        '/images/projects/jogack/3.jpg',
+        '/images/projects/jogack/4.jpg',
+      ],
+      links: {
+        site: 'https://jogack.vercel.app/',
+      },
+    },
+  },
 ];
