@@ -503,4 +503,41 @@ Timo는 사용자가 자신만의 속도로 꾸준한 회고 습관을 형성할
       },
     },
   },
+  {
+    id: 'taggle',
+    title: 'Taggle - 흩어진 레퍼런스, 태그로 쉽고 빠르게',
+    category: ['AI', 'Web', 'Coding', 'UX·UI'],
+    date: '2026.03.30',
+    thumbnail: '/images/projects/taggle/thumb.jpg',
+
+    detail: {
+      projects: '개인프로젝트',
+      period: '2026.03.25 – 2026.03.30',
+      Contribution: '100%',
+      tools: ['Figma', 'Gemini', 'Claude', 'React', 'Vite', 'Vercel', 'Supabase'],
+      description: `
+흩어져 있는 디자인 레퍼런스를 한곳에 모아 팀원들과 공유할 수 있는 협업 서비스입니다. 직관적인 태그와 폴더 시스템을 도입해, 수많은 자료 속에서도 원하는 영감을 빠르게 찾고 직관적으로 관리할 수 있도록 화면을 구성했습니다.
+      `,
+      images: [
+        '/images/projects/taggle/1.jpg',
+        '/images/projects/taggle/2.jpg',
+        '/images/projects/taggle/3.jpg',
+        '/images/projects/taggle/4.jpg',
+        '/images/projects/taggle/5.jpg',
+        '/images/projects/taggle/6.jpg',
+        '/images/projects/taggle/7.jpg',
+        '/images/projects/taggle/8.jpg',
+        '/images/projects/taggle/9.jpg',
+        '/images/projects/taggle/10.jpg',
+        '/images/projects/taggle/11.jpg',
+        '/images/projects/taggle/12.jpg',
+        '/images/projects/taggle/13.jpg',
+        '/images/projects/taggle/14.jpg',
+        '/images/projects/taggle/15.jpg',
+      ],
+      links: {
+        site: 'https://taggle-blue.vercel.app/',
+      },
+    },
+  },
 ];
