@@ -506,7 +506,7 @@ Timo는 사용자가 자신만의 속도로 꾸준한 회고 습관을 형성할
   {
     id: 'taggle',
     title: 'Taggle - 흩어진 레퍼런스, 태그로 쉽고 빠르게',
-    category: ['AI', 'Web', 'Coding', 'UX·UI'],
+    category: ['AI', 'Coding', 'UX·UI', 'Web'],
     date: '2026.03.30',
     thumbnail: '/images/projects/taggle/thumb.jpg',
 
