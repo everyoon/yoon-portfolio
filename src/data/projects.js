@@ -57,7 +57,7 @@ export const projects = [
   {
     id: 'designer-night-banner',
     title: "Designer's night banner",
-    category: ['Graphic', 'Banner'],
+    category: ['Graphic', 'Promotions'],
     date: '2025.07.28',
     thumbnail: '/images/projects/designer-night-banner/thumb.jpg',
 
